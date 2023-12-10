@@ -11,7 +11,7 @@
     <modules>
         <module>quickstart</module>
         <module>springcore</module>
-        <module>hibernate</module>
+        <module>jpa</module>
     </modules>
 
     <properties>
