@@ -70,4 +70,112 @@ Inject dependencies by calling setter methods on your class
 
 ## Qualifiers
 
+* Our application can have multiple implementation of an injected interface
+* ``` java
+  @Autowired
+  public DemoController(@Qualifier("cricketCoach") Coach coach) {
+      myCoach = coach;
+  }
+  ```
+* Beans ids are same as class names, first character lower-case (until custom)
 
+## Primary
+
+* Alternative solution for the issue mentioned in [Qualifiers](#qualifiers)
+* When using @Primary, can have only one for multiple implementations
+* ``` java
+  @Component
+  @Primary
+  public class TrackCoach implements Coach { }
+  ```
+* If we mix @Primary and @Qualifier, @Qualifier has higher priority
+
+## Which one: @Primary or @Qualifier?
+
+* @Primary leaves it up to the implementation classes and could have the issue of multiple @Primary classes leading to an error
+* @Qualifier allows us to be very specific on which bean you want
+* @Qualifier is more recommended as it's more specific and has a higher priority
+
+## Lazy Initialization
+
+* By default, when your application starts, all beans are initialized
+* Instead of creating all beans up front, we can specify lazy initialization
+* A bean will only be initialized in the following cases:
+  * It is needed for dependency injection
+  * Or it is explicitly requested
+* ``` java
+  @Component
+  @Lazy
+  public class TrackCoach implements Coach { }
+  ```
+* We can set lazy initialization for all beans in global configuration
+* ``` properties
+  spring.main.lazy-initialization=true
+  ```
+
+Advantages
+* Only create objects as needed
+* May help with faster startup time if you have large number of components
+
+Disadvantages
+* If you have web related components like @RestController, not created until requested
+* May not discover configuration issues until too late
+* Need to make sure you have enough memory for all beans once created
+
+## Bean Scopes
+
+Default scope is singleton
+
+#### Singleton
+
+* Spring Container creates only one instance of the bean, by default
+* It is cached in memory
+* All dependency injections for the bean will reference the same bean
+
+Explicitly specified scope:
+
+``` java
+  @Component
+  @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
+  public class CricketCoach implements Coach { }
+```
+
+#### Additional Spring Bean Scopes
+
+| Scope          |                         Description                          |
+|----------------|:------------------------------------------------------------:|
+| singleton      | Create a single shared instance of the bean. Default scope.  |
+| prototype      |   Creates a new bean instance for each container request.    |
+| request        |    Scoped to an HTTP web request. Only used for web apps.    |
+| session        |    Scoped to an HTTP web session. Only used for web apps.    |
+| global-session | Scoped to a global HTTP web session. Only used for web apps. |
+
+## Bean Lifecycle Methods
+
+* We can add custom logic during bean initialization or destruction
+* Initialization
+  * ``` java
+    @PostConstruct
+    public void doInitializationStuff() { }
+    ```
+* Destruction
+  * ``` java
+    @PostConstruct
+    public void doCleanupStuff() { }
+    ```
+
+## Configuring Beans
+
+``` java
+  @Configuration
+  public class SportConfig {
+      @Bean
+      public Coach swimCoach() {
+          return new SwimCoach();
+      }
+  }
+```
+
+* The bean id defaults to the method name
+* Then we can inject the bean using the bean id
+* Whole of this has a use case – make third-party class available to Spring framework
