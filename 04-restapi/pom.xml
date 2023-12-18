@@ -10,9 +10,12 @@
     </parent>
 
     <groupId>com.studies</groupId>
-    <artifactId>restapi</artifactId>
+    <artifactId>04-restapi</artifactId>
 
     <packaging>pom</packaging>
+    <modules>
+        <module>01-spring-boot-rest-crud</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

@@ -20,7 +20,7 @@
     </modules>
 
     <groupId>org.example</groupId>
-    <artifactId>quickstart</artifactId>
+    <artifactId>01-quickstart</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
