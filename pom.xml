@@ -9,10 +9,10 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>quickstart</module>
-        <module>springcore</module>
-        <module>jpa</module>
-        <module>restapi</module>
+        <module>01-quickstart</module>
+        <module>02-springcore</module>
+        <module>03-jpa</module>
+        <module>04-restapi</module>
     </modules>
 
     <properties>

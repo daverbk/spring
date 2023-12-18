@@ -11,7 +11,7 @@
 
     <packaging>pom</packaging>
     <groupId>org.example</groupId>
-    <artifactId>springcore</artifactId>
+    <artifactId>02-springcore</artifactId>
     <modules>
         <module>01-constructor-injection</module>
         <module>02-component-scanning</module>
