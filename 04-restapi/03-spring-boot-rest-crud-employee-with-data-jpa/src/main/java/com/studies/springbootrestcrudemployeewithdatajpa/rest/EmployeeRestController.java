@@ -1,7 +1,7 @@
-package com.studies.sptingbootrestcrudemployee.rest;
+package com.studies.springbootrestcrudemployeewithdatajpa.rest;
 
-import com.studies.sptingbootrestcrudemployee.entity.Employee;
-import com.studies.sptingbootrestcrudemployee.service.EmployeeService;
+import com.studies.springbootrestcrudemployeewithdatajpa.entity.Employee;
+import com.studies.springbootrestcrudemployeewithdatajpa.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -43,7 +43,12 @@ public class EmployeeRestController {
     }
 
     @DeleteMapping("/employees/{employeeId}")
-    public void editEmployee(@PathVariable int employeeId) {
+    public String editEmployee(@PathVariable int employeeId) {
+        Employee employee = findById(employeeId);
+        if (employee == null) {
+            throw new RuntimeException("Employee id not found - " + employeeId);
+        }
         employeeService.deleteById(employeeId);
+        return "Deleted employee id - " + employeeId;
     }
 }
