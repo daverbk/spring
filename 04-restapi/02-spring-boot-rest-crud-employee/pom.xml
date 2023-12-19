@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.studies</groupId>
-	<artifactId>spting-boot-rest-crud-employee</artifactId>
+	<artifactId>spring-boot-rest-crud-employee</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>02-spting-boot-rest-crud-employee</name>
-	<description>02-spting-boot-rest-crud-employee</description>
+	<name>02-spring-boot-rest-crud-employee</name>
+	<description>02-spring-boot-rest-crud-employee</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
