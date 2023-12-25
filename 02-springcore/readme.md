@@ -55,7 +55,7 @@ Spring will look for a class that matches by type: class or interface and inject
   * Allows you to leverage default component scanning
   * No need to explicitly reference the base package name
 
-``` java
+```java
   @SpringBootApplication(
   scanBasePackages = {"com.studies.springcoredemo",
                       "com.studies.util",
@@ -71,7 +71,7 @@ Inject dependencies by calling setter methods on your class
 ## Qualifiers
 
 * Our application can have multiple implementation of an injected interface
-* ``` java
+* ```java
   @Autowired
   public DemoController(@Qualifier("cricketCoach") Coach coach) {
       myCoach = coach;
@@ -83,7 +83,7 @@ Inject dependencies by calling setter methods on your class
 
 * Alternative solution for the issue mentioned in [Qualifiers](#qualifiers)
 * When using @Primary, can have only one for multiple implementations
-* ``` java
+* ```java
   @Component
   @Primary
   public class TrackCoach implements Coach { }
@@ -103,7 +103,7 @@ Inject dependencies by calling setter methods on your class
 * A bean will only be initialized in the following cases:
   * It is needed for dependency injection
   * Or it is explicitly requested
-* ``` java
+* ```java
   @Component
   @Lazy
   public class TrackCoach implements Coach { }
@@ -134,7 +134,7 @@ Default scope is singleton
 
 Explicitly specified scope:
 
-``` java
+```java
   @Component
   @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
   public class CricketCoach implements Coach { }
@@ -154,19 +154,19 @@ Explicitly specified scope:
 
 * We can add custom logic during bean initialization or destruction
 * Initialization
-  * ``` java
+  * ```java
     @PostConstruct
     public void doInitializationStuff() { }
     ```
 * Destruction
-  * ``` java
+  * ```java
     @PostConstruct
     public void doCleanupStuff() { }
     ```
 
 ## Configuring Beans
 
-``` java
+```java
   @Configuration
   public class SportConfig {
       @Bean
