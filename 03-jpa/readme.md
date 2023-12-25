@@ -53,13 +53,13 @@ Java class that is mapped to a database table
 * Must have a public or protected no-argument constructor
 * The class can have other constructor
   * Map class to database table
-  ``` java
+  ```java
     @Entity
     @Table(name="student")
     public class Student { }
   ```
   * Map fields to database columns
-  ``` java
+  ```java
     @Entity
     @Table(name="student")
     public class Student {
@@ -102,7 +102,7 @@ Begins and ends a transaction for your JPA code
 
 ## Saving a Java Object
 
-``` java
+```java
 // create Java object
 Student theStudent = new Student("Paul", "Doe", "paul@uni.com");
         
@@ -112,7 +112,7 @@ entityManager.persist(theStudent);
 
 ## Retrieving a Java Object
 
-``` java
+```java
 // create Java object
 Student theStudent = new Student("Paul", "Doe", "paul@uni.com");
 
@@ -130,21 +130,21 @@ Similar in concept to SQL, but JPQL is based on entity name and entity fields
 
 #### Querying for Java Object
 
-``` java
+```java
 TypedQuery<Student> query = entityManager.createQuery("from Student WHERE lastName='Doe'", Student.class);
 List<Student> students= query.getResultList();
 ```
 
 #### JPQL Named Parameters
 
-``` java
+```java
 TypedQuery<Student> theQuery = entityManager.createQuery("FROM Student WHERE lastName=:theData", Student.class);
 theQuery.setParameter("theData", theLastName);
 ```
 
 ## Update a record
 
-``` java
+```java
 Student student = entityManager.find(Student.class, 1);
 
 // change first name to "Rat"
@@ -154,7 +154,7 @@ entityManager.merge(student);
 
 #### Update for all
 
-``` java
+```java
 int numRowsUpdated = entityManager
 .createQuery("UPDATE Student SET lastName='Rats'”)
 .executeUpdate();
@@ -162,7 +162,7 @@ int numRowsUpdated = entityManager
 
 ## Delete a record
 
-``` java
+```java
 // retrieve the student
 int id = 1;
 Student theStudent = entityManager.find(Student.class, id);
@@ -173,7 +173,7 @@ entityManager.remove(theStudent);
 
 #### Delete based on a condition
 
-``` java
+```java
 int numRowsDeleted = entityManager
 .createQuery("DELETE FROM Student WHERE lastName=‘Crazy’")
 .executeUpdate();
@@ -181,7 +181,7 @@ int numRowsDeleted = entityManager
 
 #### Delete all
 
-``` java
+```java
 int numRowsDeleted = entityManager
 .createQuery("DELETE FROM Student")
 .executeUpdate();

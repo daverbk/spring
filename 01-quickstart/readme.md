@@ -68,14 +68,14 @@ Actuator endpoints can be found [here](https://docs.spring.io/spring-boot/docs/c
 
 ### Using java -jar
 
-```
+```shell
 mvn package
 java -jar ourcoolapp-0.0.1.jar
 ```
 
 ### Using maven plugin
 
-```
+```shell
 mvn spring-boot:run
 ```
 
