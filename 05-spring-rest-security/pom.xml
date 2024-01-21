@@ -11,10 +11,13 @@
 
     <groupId>com.studies</groupId>
     <artifactId>05-spring-rest-security</artifactId>
+    <name>05-spring-rest-security</name>
+    <description>05-spring-rest-security</description>
 
     <packaging>pom</packaging>
     <modules>
         <module>01-spring-rest-security-demo</module>
+        <module>02-spring-boot-rest-security-jpa</module>
     </modules>
 
     <properties>
