@@ -1,5 +1,32 @@
 # Notes
 
+<!-- TOC -->
+* [Notes](#notes)
+  * [Hibernate](#hibernate)
+      * [Benefits](#benefits)
+  * [JPA](#jpa)
+      * [Benefits](#benefits-1)
+  * [Data Source Configuration](#data-source-configuration)
+  * [Entity Class](#entity-class)
+      * [ID Generation Strategies](#id-generation-strategies)
+  * [JPA Entity Manager](#jpa-entity-manager)
+  * [Spring @Transactional](#spring-transactional)
+  * [Spring @Repository](#spring-repository)
+  * [Saving a Java Object](#saving-a-java-object)
+  * [Retrieving a Java Object](#retrieving-a-java-object)
+  * [JPA Query Language](#jpa-query-language)
+      * [Querying for Java Object](#querying-for-java-object)
+      * [JPQL Named Parameters](#jpql-named-parameters)
+  * [Update a record](#update-a-record)
+      * [Update for all](#update-for-all)
+  * [Delete a record](#delete-a-record)
+      * [Delete based on a condition](#delete-based-on-a-condition)
+      * [Delete all](#delete-all)
+  * [Create Database Tables from Java Code](#create-database-tables-from-java-code)
+      * [Configuration](#configuration)
+  * [Recommendation from Chad](#recommendation-from-chad)
+<!-- TOC -->
+
 ## Hibernate
 
 Framework for persisting / saving Java objects in a database

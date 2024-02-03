@@ -1,5 +1,33 @@
 # Notes
 
+<!-- TOC -->
+* [Notes](#notes)
+  * [Web starter is required](#web-starter-is-required)
+  * [Rest controller](#rest-controller)
+  * [Serialization](#serialization)
+  * [Path Variables](#path-variables)
+  * [Exception Handling](#exception-handling)
+  * [Global Exception Handling](#global-exception-handling)
+    * [@ControllerAdvice](#controlleradvice)
+  * [Rest service example](#rest-service-example)
+  * [@Service](#service)
+    * [Purpose of Service Layer](#purpose-of-service-layer)
+    * [Service Layer - Best Practice](#service-layer---best-practice)
+  * [Spring Data JPA](#spring-data-jpa)
+    * [Advanced features available](#advanced-features-available)
+    * [JpaRepository Docs](#jparepository-docs)
+  * [Spring Data REST](#spring-data-rest)
+    * [For Spring Data REST we need](#for-spring-data-rest-we-need)
+    * [Spring Data REST advanced features](#spring-data-rest-advanced-features)
+    * [@RepositoryRestResource](#repositoryrestresource)
+    * [Spring Data Rest Docs](#spring-data-rest-docs)
+    * [Spring Data Configuration Props](#spring-data-configuration-props)
+  * [Different components covered so far](#different-components-covered-so-far)
+  * [Spring Documentation](#spring-documentation)
+  * [Understanding HATEOAS](#understanding-hateoas)
+  * [HAL Data Format](#hal-data-format-)
+<!-- TOC -->
+
 ## Web starter is required
 
 ```xml
