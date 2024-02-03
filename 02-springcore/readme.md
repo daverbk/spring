@@ -1,5 +1,26 @@
 # Notes
 
+<!-- TOC -->
+* [Notes](#notes)
+  * [Inversion of Control (IoC)](#inversion-of-control-ioc)
+  * [Dependency Injection](#dependency-injection)
+      * [Recommended Injection Types](#recommended-injection-types)
+      * [Which one to use?](#which-one-to-use)
+      * [AutoWiring](#autowiring)
+  * [@Component](#component)
+  * [Scanning for Component Classes](#scanning-for-component-classes)
+  * [Setter Injection](#setter-injection)
+  * [Qualifiers](#qualifiers)
+  * [Primary](#primary)
+  * [Which one: @Primary or @Qualifier?](#which-one-primary-or-qualifier)
+  * [Lazy Initialization](#lazy-initialization)
+  * [Bean Scopes](#bean-scopes)
+      * [Singleton](#singleton)
+      * [Additional Spring Bean Scopes](#additional-spring-bean-scopes)
+  * [Bean Lifecycle Methods](#bean-lifecycle-methods)
+  * [Configuring Beans](#configuring-beans)
+<!-- TOC -->
+
 ## Inversion of Control (IoC)
 
 The approach of outsourcing the
