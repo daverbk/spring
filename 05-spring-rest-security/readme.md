@@ -113,7 +113,7 @@ public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
 * Following Spring Security’s predefined table schemas
 
-![screenshot](/Users/david.rabko/IdeaProjects/spring/05-spring-rest-security/02-spring-boot-rest-security-jpa/employee_directory_diagram.png)
+![screenshot](02-spring-boot-rest-security-jpa/employee_directory_diagram.png)
 
 > [!CAUTION]
 > Password column must be at least 68 chars wide
